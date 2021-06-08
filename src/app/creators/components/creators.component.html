@@ -1,0 +1,3 @@
+<ul *ngIf="creatorsService.creators$ | async">
+  <li *ngFor="let creator of creatorsService.creators$ | async">{{ creator.id }}</li>
+</ul>
