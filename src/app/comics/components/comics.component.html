@@ -1,0 +1,3 @@
+<ul *ngIf="comicsService.comics$ | async">
+  <li *ngFor="let comic of comicsService.comics$ | async">{{ comic.id }}</li>
+</ul>

@@ -1,7 +1,7 @@
-import { MarvelResponse } from "src/app/shared/models/marvel-response.model";
-import { Character } from "../models/characters.model";
+import { ApiResponse } from 'src/app/shared/models/response.model';
+import { Character } from '../models/characters.model';
 
-export const charactersGetMock: MarvelResponse<Character> = {
+export const charactersMock: ApiResponse<Character> = {
   "code": 200,
   "status": "Ok",
   "copyright": "© 2021 MARVEL",

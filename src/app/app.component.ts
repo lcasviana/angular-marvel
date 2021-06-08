@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: string = 'Angular Marvel';
+
+  public menu: { name: string, route: string }[] = [
+    { name: 'Characters', route: '/characters' },
+    { name: 'Comics', route: '/comics' },
+  ];
 }

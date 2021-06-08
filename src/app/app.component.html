@@ -9,7 +9,9 @@
   <mat-sidenav-container class="app-container">
     <mat-sidenav class="app-sidenav" #matSideNav mode="over">
       <mat-nav-list>
-        <a mat-list-item routerLink="/characters">Characters</a>
+        <a *ngFor="let item of menu" mat-list-item [routerLink]="item.route" (click)="matSideNav.toggle()">
+          {{ item.name }}
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 

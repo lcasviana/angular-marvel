@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { MarvelResponse } from 'src/app/shared/models/marvel-response.model';
+import { ApiResponse } from 'src/app/shared/models/response.model';
 import { environment } from 'src/environments/environment';
-import { charactersGetMock } from '../mocks/characters.mock';
+import { charactersMock } from '../mocks/characters.mock';
 import { Character } from '../models/characters.model';
 
 @Injectable()
@@ -13,12 +13,12 @@ export class CharactersService {
 
   constructor(private httpClient: HttpClient) {
     this.getCharacters()
-      .subscribe(({ data }: MarvelResponse<Character>) => this._characters.next(data.results));
+      .subscribe(({ data }: ApiResponse<Character>) => this._characters.next(data.results));
   }
 
-  private getCharacters(): Observable<MarvelResponse<Character>> {
+  private getCharacters(): Observable<ApiResponse<Character>> {
     return environment.production
-      ? this.httpClient.get<MarvelResponse<Character>>(`${environment.marvel.url}/characters`)
-      : of<MarvelResponse<Character>>(charactersGetMock);
+      ? this.httpClient.get<ApiResponse<Character>>(`${environment.marvel.url}/characters`)
+      : of<ApiResponse<Character>>(charactersMock);
   }
 }
