@@ -1,0 +1,3 @@
+<ul *ngIf="storiesService.stories$ | async">
+  <li *ngFor="let storie of storiesService.stories$ | async">{{ storie.id }}</li>
+</ul>
