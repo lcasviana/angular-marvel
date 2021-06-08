@@ -1,18 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-const routes = [
-  { path: '**', redirectTo: '' },
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes), BrowserAnimationsModule],
-  exports: [RouterModule],
-})
-class AppRoutingModule { }
+import { MaterialModule } from './shared/material.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +11,7 @@ class AppRoutingModule { }
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MaterialModule,
   ],
   bootstrap: [AppComponent],
 })

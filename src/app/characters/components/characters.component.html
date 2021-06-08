@@ -1,0 +1,3 @@
+<ul *ngIf="charactersService.characters$ | async">
+  <li *ngFor="let result of charactersService.characters$ | async">{{ result.id }}</li>
+</ul>
