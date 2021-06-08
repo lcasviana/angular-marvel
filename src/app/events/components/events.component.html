@@ -1,0 +1,3 @@
+<ul *ngIf="eventsService.events$ | async">
+  <li *ngFor="let event of eventsService.events$ | async">{{ event.id }}</li>
+</ul>
