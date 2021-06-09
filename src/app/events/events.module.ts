@@ -8,7 +8,7 @@ import { EventComponent } from './components/event/event.component';
 @NgModule({
   declarations: [
     EventsComponent,
-    EventComponent
+    EventComponent,
   ],
   imports: [
     EventsRoutingModule,

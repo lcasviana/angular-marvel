@@ -8,7 +8,7 @@ import { SerieComponent } from './components/serie/serie.component';
 @NgModule({
   declarations: [
     SeriesComponent,
-    SerieComponent
+    SerieComponent,
   ],
   imports: [
     SeriesRoutingModule,

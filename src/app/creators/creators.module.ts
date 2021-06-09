@@ -8,7 +8,7 @@ import { CreatorComponent } from './components/creator/creator.component';
 @NgModule({
   declarations: [
     CreatorsComponent,
-    CreatorComponent
+    CreatorComponent,
   ],
   imports: [
     CreatorsRoutingModule,

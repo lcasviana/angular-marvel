@@ -8,7 +8,7 @@ import { StorieComponent } from './components/storie/storie.component';
 @NgModule({
   declarations: [
     StoriesComponent,
-    StorieComponent
+    StorieComponent,
   ],
   imports: [
     StoriesRoutingModule,
