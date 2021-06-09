@@ -3,10 +3,12 @@ import { SharedModule } from '../shared/shared.module';
 import { SeriesRoutingModule } from './series-routing.module';
 import { SeriesComponent } from './components/series.component';
 import { SeriesService } from './services/series.service';
+import { SerieComponent } from './components/serie/serie.component';
 
 @NgModule({
   declarations: [
-    SeriesComponent
+    SeriesComponent,
+    SerieComponent
   ],
   imports: [
     SeriesRoutingModule,

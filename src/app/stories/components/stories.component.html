@@ -1,3 +1,7 @@
-<ul *ngIf="storiesService.stories$ | async">
-  <li *ngFor="let storie of storiesService.stories$ | async">{{ storie.id }}</li>
-</ul>
+<ng-container *ngIf="storiesService.stories$ | async">
+  <section class="stories">
+    <ng-container *ngFor="let storie of storiesService.stories$ | async">
+      <storie [data]="storie"></storie>
+    </ng-container>
+  </section>
+</ng-container>

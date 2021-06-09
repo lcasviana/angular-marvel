@@ -1,3 +1,7 @@
-<ul *ngIf="eventsService.events$ | async">
-  <li *ngFor="let event of eventsService.events$ | async">{{ event.id }}</li>
-</ul>
+<ng-container *ngIf="eventsService.events$ | async">
+  <section class="events">
+    <ng-container *ngFor="let event of eventsService.events$ | async">
+      <event [data]="event"></event>
+    </ng-container>
+  </section>
+</ng-container>

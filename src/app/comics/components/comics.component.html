@@ -1,3 +1,7 @@
-<ul *ngIf="comicsService.comics$ | async">
-  <li *ngFor="let comic of comicsService.comics$ | async">{{ comic.id }}</li>
-</ul>
+<ng-container *ngIf="comicsService.comics$ | async">
+  <section class="comics">
+    <ng-container *ngFor="let comic of comicsService.comics$ | async">
+      <comic [data]="comic"></comic>
+    </ng-container>
+  </section>
+</ng-container>

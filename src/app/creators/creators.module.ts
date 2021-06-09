@@ -3,10 +3,12 @@ import { SharedModule } from '../shared/shared.module';
 import { CreatorsRoutingModule } from './creators-routing.module';
 import { CreatorsComponent } from './components/creators.component';
 import { CreatorsService } from './services/creators.service';
+import { CreatorComponent } from './components/creator/creator.component';
 
 @NgModule({
   declarations: [
-    CreatorsComponent
+    CreatorsComponent,
+    CreatorComponent
   ],
   imports: [
     CreatorsRoutingModule,

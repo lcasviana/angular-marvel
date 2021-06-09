@@ -1,3 +1,7 @@
-<ul *ngIf="charactersService.characters$ | async">
-  <li *ngFor="let character of charactersService.characters$ | async">{{ character.id }}</li>
-</ul>
+<ng-container *ngIf="charactersService.characters$ | async">
+  <section class="characters">
+    <ng-container *ngFor="let character of charactersService.characters$ | async">
+      <character [data]="character"></character>
+    </ng-container>
+  </section>
+</ng-container>

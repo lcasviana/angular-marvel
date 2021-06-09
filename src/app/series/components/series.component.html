@@ -1,3 +1,7 @@
-<ul *ngIf="seriesService.series$ | async">
-  <li *ngFor="let serie of seriesService.series$ | async">{{ serie.id }}</li>
-</ul>
+<ng-container *ngIf="seriesService.series$ | async">
+  <section class="series">
+    <ng-container *ngFor="let serie of seriesService.series$ | async">
+      <serie [data]="serie"></serie>
+    </ng-container>
+  </section>
+</ng-container>
