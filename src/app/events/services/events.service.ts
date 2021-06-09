@@ -18,7 +18,8 @@ export class EventsService {
 
   private getEvents(): Observable<ApiResponse<Event>> {
     return environment.production
-      ? this.httpClient.get<ApiResponse<Event>>(`${environment.marvel.url}/events`)
+      ? this.httpClient.get<ApiResponse<Event>>(
+        `${environment.marvel.url}/events?ts=${environment.marvel.salt}&apikey=${environment.marvel.publicKey}&hash=${environment.marvel.hash}`)
       : of<ApiResponse<Event>>(eventsMock);
   }
 }

@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ShellComponent } from './shared/components/shell/shell.component';
 
 @NgModule({
+  bootstrap: [
+    AppComponent,
+  ],
   declarations: [
     AppComponent,
     ShellComponent,
@@ -16,9 +19,6 @@ import { ShellComponent } from './shared/components/shell/shell.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-  ],
-  bootstrap: [
-    AppComponent,
   ],
 })
 export class AppModule { }

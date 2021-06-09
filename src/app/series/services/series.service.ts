@@ -18,7 +18,8 @@ export class SeriesService {
 
   private getSeries(): Observable<ApiResponse<Serie>> {
     return environment.production
-      ? this.httpClient.get<ApiResponse<Serie>>(`${environment.marvel.url}/series`)
+      ? this.httpClient.get<ApiResponse<Serie>>(
+        `${environment.marvel.url}/series?ts=${environment.marvel.salt}&apikey=${environment.marvel.publicKey}&hash=${environment.marvel.hash}`)
       : of<ApiResponse<Serie>>(seriesMock);
   }
 }

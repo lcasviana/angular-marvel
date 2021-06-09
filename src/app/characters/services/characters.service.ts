@@ -18,7 +18,8 @@ export class CharactersService {
 
   private getCharacters(): Observable<ApiResponse<Character>> {
     return environment.production
-      ? this.httpClient.get<ApiResponse<Character>>(`${environment.marvel.url}/characters`)
+      ? this.httpClient.get<ApiResponse<Character>>(
+        `${environment.marvel.url}/characters?ts=${environment.marvel.salt}&apikey=${environment.marvel.publicKey}&hash=${environment.marvel.hash}`)
       : of<ApiResponse<Character>>(charactersMock);
   }
 }

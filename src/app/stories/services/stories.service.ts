@@ -18,7 +18,8 @@ export class StoriesService {
 
   private getStories(): Observable<ApiResponse<Storie>> {
     return environment.production
-      ? this.httpClient.get<ApiResponse<Storie>>(`${environment.marvel.url}/stories`)
+      ? this.httpClient.get<ApiResponse<Storie>>(
+        `${environment.marvel.url}/stories?ts=${environment.marvel.salt}&apikey=${environment.marvel.publicKey}&hash=${environment.marvel.hash}`)
       : of<ApiResponse<Storie>>(storiesMock);
   }
 }

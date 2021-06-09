@@ -18,7 +18,8 @@ export class CreatorsService {
 
   private getCreators(): Observable<ApiResponse<Creator>> {
     return environment.production
-      ? this.httpClient.get<ApiResponse<Creator>>(`${environment.marvel.url}/creators`)
+      ? this.httpClient.get<ApiResponse<Creator>>(
+        `${environment.marvel.url}/creators?ts=${environment.marvel.salt}&apikey=${environment.marvel.publicKey}&hash=${environment.marvel.hash}`)
       : of<ApiResponse<Creator>>(creatorsMock);
   }
 }

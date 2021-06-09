@@ -18,7 +18,8 @@ export class ComicsService {
 
   private getComics(): Observable<ApiResponse<Comic>> {
     return environment.production
-      ? this.httpClient.get<ApiResponse<Comic>>(`${environment.marvel.url}/comics`)
+      ? this.httpClient.get<ApiResponse<Comic>>(
+        `${environment.marvel.url}/comics?ts=${environment.marvel.salt}&apikey=${environment.marvel.publicKey}&hash=${environment.marvel.hash}`)
       : of<ApiResponse<Comic>>(comicsMock);
   }
 }
